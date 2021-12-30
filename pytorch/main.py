@@ -3,6 +3,8 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 from PIL import Image
 
+from src.services import ImagePreprocessor
+
 SCRIPT_PATH = Path(__file__).parent
 
 if __name__ == "__main__":
@@ -14,4 +16,5 @@ if __name__ == "__main__":
     plt.show()
 
     # Preprocessing
-    print("A")
+    image = ImagePreprocessor.preprocess(image=image)
+    patches = ImagePreprocessor.get_patches(image=image)
